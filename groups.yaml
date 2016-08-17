@@ -1,0 +1,67 @@
+  default_view:
+    view: yes
+    entities:
+      - switch.vape
+      - switch.entertainment_center
+      - switch.wemo2
+      - switch.wemo3
+      - switch.wemo4
+      - group.speedtest
+      - group.Living_Room_Sensors
+      - group.Location_Tracking
+      - group.NZBGet
+    icon: mdi:home
+  NZBGet:
+    - sensor.nzbget_disk_free
+    - sensor.nzbget_queue_size
+    - sensor.nzbget_speed
+    - sensor.nzbget_article_cache
+  Location Tracking:
+    entities:
+      - device_tracker.owntracks
+  Living Room:
+    view: yes
+    entities:
+      - group.Living_Room_Sensors
+      - group.Living_Room_Atmosphere
+    icon: mdi:television-guide
+  speedtest:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+  Home Environemnt:
+    - sensor.netatmo_Living_Room_Temperature
+    - sensor.netatmo_Living_Room_Humidity
+    - sensor.netatmo_Living_Room_CO2
+    - sensor.netatmo_Bedroom_Temperature
+    - sensor.netatmo_Bedroom_Humidity
+  Living Room Sensors:
+    - sensor.netatmo_Living_Room_Noise
+    - camera.LivingRoom
+  Living Room Atmosphere:
+    - sensor.netatmo_Living_Room_Temperature
+    - sensor.netatmo_Living_Room_Humidity
+    - sensor.netatmo_Living_Room_CO2
+  Weather:
+    - sun.sun
+    - sensor.weather_temperature
+    - sensor.weather_summary
+#    - sensor.weather_minutely_summary
+#    - sensor.weather_hourly_summary
+#    - sensor.weather_daily_summary
+    - sensor.weather_apparent_temperature
+    - sensor.weather_precip
+    - sensor.weather_precip_probability
+    - sensor.weather_precip_intensity
+    - sensor.weather_humidity
+    - sensor.weather_dew_point
+    - sensor.weather_cloud_coverage
+    - sensor.weather_nearest_storm_distance
+#    - sensor.weather_nearest_storm_bearing
+    - sensor.weather_wind_speed
+    - sensor.weather_wind_bearing
+    - sensor.weather_visibility
+    - sensor.weather_ozone
+    - sensor.weather_pressure
+  Plex-Server:
+    - sensor.piratessd
