@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 45.5276
-  longitude: -122.680315
+  latitude: _redacted_
+  longitude: _redacted_
   # Impacts weather/sunrise data
   elevation: 60
   # C for Celsius, F for Fahrenheit
@@ -15,8 +15,8 @@ homeassistant:
 mqtt:
   broker: m12.cloudmqtt.com
   port: 14948
-  username: creilly
-  password: tr@ck123
+  username: _redacted_
+  password: _redacted_
 
 device_tracker:
   platform: owntracks
@@ -24,15 +24,15 @@ device_tracker:
 
 zone:
   name: Home
-  latitude: 45.5276
-  longitude: -122.680315
+  latitude: _redacted_
+  longitude: _redacted_
   radius: 100
   icon: mdi:home-map-marker
 
 zone 2:
-  name: Verilan Warehouse
-  latitude: 45.4384
-  longitude: -122.622690
+  name: _redacted_
+  latitude: _redacted_
+  longitude: _redacted_
   radius: 150
   icon: mdi:city
 
@@ -44,7 +44,7 @@ frontend:
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: tr@ck123
+  api_password: _redacted_
 
 # Checks for available updates
 updater:
@@ -65,10 +65,10 @@ logbook:
 #sun:
 
 netatmo:
-  api_key: 542344511c7759032f53f32b
-  secret_key: uEGaAFHo013vxcDGEAoCpPYNYJ1H4Eqs7
-  username: con.reilly@gmail.com
-  password: Tr@ck123
+  api_key: _redacted_
+  secret_key: _redacted_
+  username: _redacted_
+  password: _redacted_
 
 # Weather Prediction
 sensor:
@@ -87,7 +87,7 @@ sensor 2:
 camera:
   platform: uvc
   nvr: localhost
-  key: zPOclY6zqTHtv8yb
+  key: _redacted_
 
 sensor 3:
   platform: netatmo
@@ -112,9 +112,9 @@ sensor 4:
    name: PIRATE-SSD
    host: 172.16.23.120
    port: 32400
-   username: creillyrun
-   password: track123
-   server: PIRATE-SSD
+   username: _redacted_
+   password: _redacted_
+   server: _redacted_
 
 sensor 5:
   platform: speedtest
@@ -128,7 +128,7 @@ sensor 5:
 
 sensor 6:
   platform: forecast
-  api_key: a8c7873efda36131aa6604d9434fa371
+  api_key: _redacted_
   monitored_conditions:
     - summary
 #    - minutely_summary
@@ -153,8 +153,8 @@ sensor 6:
 sensor 7:
   platform: nzbget
   base_url: http://172.16.23.121:6789
-  username: creilly
-  password: tr@ck123
+  username: _redacted_
+  password: _redacted_
   monitored_variables:
     - ArticleCacheMB
     - DownloadRate
