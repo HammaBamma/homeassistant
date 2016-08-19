@@ -1,0 +1,186 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: _redacted_
+  longitude: _redacted_
+  # Impacts weather/sunrise data
+  elevation: 60
+  # C for Celsius, F for Fahrenheit
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Los_Angeles
+  customize: !include customize.yaml
+
+mqtt:
+  broker: m12.cloudmqtt.com
+  port: 14948
+  username: _redacted_
+  password: _redacted_
+
+device_tracker:
+  platform: owntracks
+  max_gps_accuracy: 200
+
+zone:
+  name: Home
+  latitude: _redacted_
+  longitude: _redacted_
+  radius: 100
+  icon: mdi:home-map-marker
+
+zone 2:
+  name: _redacted_
+  latitude: _redacted_
+  longitude: _redacted_
+  radius: 150
+  icon: mdi:city
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: _redacted_
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+#Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+#sun:
+
+netatmo:
+  api_key: _redacted_
+  secret_key: _redacted_
+  username: _redacted_
+  password: _redacted_
+
+# Weather Prediction
+sensor:
+  platform: yr
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.camera: critical
+
+sensor 2:
+  platform: worldclock
+  time_zone: America/Los_Angeles
+  name: Portland
+
+camera:
+  platform: uvc
+  nvr: localhost
+  key: _redacted_
+
+sensor 3:
+  platform: netatmo
+  station: HAMMA-HUT
+  modules:
+    Living_Room:
+      - temperature
+      - humidity
+      - noise
+      - pressure
+      - co2
+      - wifi_status
+    Bedroom:
+      - temperature
+      - battery_vp
+      - min_temp
+      - max_temp
+      - humidity
+
+sensor 4:
+   platform: plex
+   name: PIRATE-SSD
+   host: 172.16.23.120
+   port: 32400
+   username: _redacted_
+   password: _redacted_
+   server: _redacted_
+
+sensor 5:
+  platform: speedtest
+  minute:
+    - 0
+    - 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+sensor 6:
+  platform: forecast
+  api_key: _redacted_
+  monitored_conditions:
+    - summary
+#    - minutely_summary
+#    - hourly_summary
+#    - daily_summary
+#    - icon
+    - nearest_storm_distance
+#    - nearest_storm_bearing
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+sensor 7:
+  platform: nzbget
+  base_url: http://172.16.23.121:6789
+  username: _redacted_
+  password: _redacted_
+  monitored_variables:
+    - ArticleCacheMB
+    - DownloadRate
+    - DownloadPaused
+    - FreeDiskSpaceMB
+    - PostPaused
+    - RemainingSizeMB
+
+panel_iframe:
+  router:
+    title: 'Router'
+    icon: 'mdi:router-wireless'
+    url: 'http://172.16.23.1'
+  sonarr:
+    title: 'Sonarr'
+    icon: 'mdi:television'
+    url: 'http://172.16.23.121:8989'
+
+#################################################################
+## Includes
+#################################################################
+
+group: !include groups.yaml
+
+#scene: !include scenes.yaml
+
+#automation: !include automation.yaml
+
+#input_boolean: !include input_boolean.yaml

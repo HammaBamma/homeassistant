@@ -1,0 +1,82 @@
+###### 
+## Customize
+######
+
+#WemoSwitches
+     switch.vape:
+       icon: mdi:flask
+     switch.entertainment_center:
+       icon: mdi:television
+
+#SpeedTest
+     sensor.speedtest_ping:
+       friendly_name: "Speedtest Latency"
+       icon: mdi:speedometer
+     sensor.speedtest_download:
+       icon: mdi:arrow-down-bold
+     sensor.speedtest_upload:
+       icon: mdi:arrow-up-bold
+
+#NZBGet
+     sensor.nzbget_disk_free:
+       friendly_name: "Free Content Space"
+     sensor.nzbget_queue_size:
+       friendly_name: "Download Queue"
+     sensor.nzbget_speed:
+       friendly_name: "Download Speed"
+     sensor.nzbget_article_cache:
+       friendly_name: "Cache"
+
+
+
+#weather
+     sensor.weather_temperature:
+       friendly_name: 'Outdoor Temperature'
+     sensor.weather_summary:
+       icon: mdi:weather-sunny
+     sensor.weather_hourly_summary:
+       icon: mdi:weather-sunny
+     sensor.weather_minutely_summary:
+       icon: mdi:weather-sunny
+     sensor.weather_daily_summary:
+       icon: mdi:weather-sunny
+     sensor.weather_apparent_temperature:
+       icon: mdi:thermometer-lines
+     sensor.weather_precip:
+       icon: mdi:weather-pouring
+     sensor.weather_precip_probability:
+       icon: mdi:weather-pouring
+     sensor.weather_precip_intensity:
+       icon: mdi:weather-pouring
+       friendly_name: 'Rainfall'
+     sensor.weather_humidity:
+       icon: mdi:water-percent
+       friendly_name: 'Outdoor Humidity'
+     sensor.weather_cloud_coverage:
+       icon: mdi:weather-cloudy
+     sensor.weather_nearest_storm_distance:
+       icon: mdi:weather-lightning
+     sensor.weather_wind_speed:
+       icon: mdi:weather-windy
+     sensor.main_floor_humidity:
+       icon: mdi:water-percent
+     sensor.weather_wind_bearing:
+       icon: mdi:weather-windy
+     sensor.weather_ozone:
+       icon: mdi:cloud
+     sensor.weather_pressure:
+       icon: mdi:weight
+
+#NetAtmo
+     sensor.netatmo_Living_Room_Temperature:
+       friendly_name: 'Living Room Temp'
+     sensor.netatmo_Living_Room_Humidity:
+       friendly_name: 'Living Room Humidity'
+     sensor.netatmo_Living_Room_Co2:
+       friendly_name: 'Living Room Co2'
+     sensor.netatmo_Living_Room_Wifi:
+       friendly_name: 'Living Room Wifi Signal'
+     sensor.netatmo_Bedroom_Temperature:
+       friendly_name: 'Bedroom Temp'
+     sensor.netatmo_Bedroom_Humidity:
+       friendly_name: 'Bedroom Humidity'
