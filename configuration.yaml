@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: _redacted_
-  longitude: _redacted_
+  latitude: !secret home_lat
+  longitude: !secret home_long
   # Impacts weather/sunrise data
   elevation: 60
   # C for Celsius, F for Fahrenheit
@@ -13,10 +13,10 @@ homeassistant:
   customize: !include customize.yaml
 
 mqtt:
-  broker: m12.cloudmqtt.com
-  port: 14948
-  username: _redacted_
-  password: _redacted_
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
 
 device_tracker:
   platform: owntracks
@@ -24,15 +24,15 @@ device_tracker:
 
 zone:
   name: Home
-  latitude: _redacted_
-  longitude: _redacted_
+  latitude: !secret home_lat
+  longitude: !secret home_long
   radius: 100
   icon: mdi:home-map-marker
 
 zone 2:
-  name: _redacted_
-  latitude: _redacted_
-  longitude: _redacted_
+  name: !secret ware_name
+  latitude: !secret ware_lat
+  longitude: !secret ware_long
   radius: 150
   icon: mdi:city
 
@@ -44,7 +44,7 @@ frontend:
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: _redacted_
+  api_password: !secret http_password
 
 # Checks for available updates
 updater:
@@ -65,16 +65,16 @@ logbook:
 #sun:
 
 netatmo:
-  api_key: _redacted_
-  secret_key: _redacted_
-  username: _redacted_
-  password: _redacted_
+  api_key: !secret netatmo_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_user
+  password: !secret netatmo_pass
 
 # Weather Prediction
 sensor:
   platform: yr
 
-logger:
+logger: 
   default: info
   logs:
     homeassistant.components.camera: critical
@@ -87,11 +87,11 @@ sensor 2:
 camera:
   platform: uvc
   nvr: localhost
-  key: _redacted_
+  key: !secret uvc_key
 
 sensor 3:
   platform: netatmo
-  station: HAMMA-HUT
+  station: !secret netatmo_station
   modules:
     Living_Room:
       - temperature
@@ -109,12 +109,12 @@ sensor 3:
 
 sensor 4:
    platform: plex
-   name: PIRATE-SSD
-   host: 172.16.23.120
+   name: !secret plex_name
+   host: !secret plex_host
    port: 32400
-   username: _redacted_
-   password: _redacted_
-   server: _redacted_
+   username: !secret plex_user
+   password: !secret plex_pass
+   server: !secret plex_name
 
 sensor 5:
   platform: speedtest
@@ -128,7 +128,7 @@ sensor 5:
 
 sensor 6:
   platform: forecast
-  api_key: _redacted_
+  api_key: !secret forecast_api
   monitored_conditions:
     - summary
 #    - minutely_summary
@@ -152,9 +152,9 @@ sensor 6:
     - ozone
 sensor 7:
   platform: nzbget
-  base_url: http://172.16.23.121:6789
-  username: _redacted_
-  password: _redacted_
+  base_url: !secret nzbget_url
+  username: !secret nzbget_user
+  password: !secret nzbget_pass
   monitored_variables:
     - ArticleCacheMB
     - DownloadRate
